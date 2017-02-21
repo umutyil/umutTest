@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(umutTest)\n\ndosya_adı=\"D:/Umut/Projeler/UdaDoE/commercial.txt\"\nveri=read.table(dosya_adı, header = TRUE)\nkk = tanimla(x=veri, resp=\"score\", fac=list(\"commercial\", \"subject\"))\nresp = \"score\"\nfat = \"subject\"\nprint(kk)\nylab=\"score\"\nxlab=\"Faktör düzeyleri\"\nmain=\"Veri Box Plot\"\ncol=rainbow(7)\nfont.main=3\nfont.lab=6\ncex.main=1 # Grafik başlığının font boyutunu belirler\ncex.lab=1\ncex=1 # Outlier ların boyutunu belirler\ndotplot(veri[[resp]] ~ veri[[fat]],\n        main=\"Veri Dot Plot\",\n        xlab=xlab,\n        ylab=ylab,\n        col=col,\n        cex=cex,\n        cex.lab=cex.lab,\n        cex.main=cex.main,\n        data=veri)\n\n",
+    "created" : 1487414925497.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "812166514",
+    "id" : "DCD498D5",
+    "lastKnownWriteTime" : 30681274975715443,
+    "last_content_update" : 1487423286779,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
