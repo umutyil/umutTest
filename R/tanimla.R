@@ -21,8 +21,8 @@ tanimla <- function(x, resp, fac){
     for(i in fac){
       result[[length(result) + 1]] <- psych::describeBy(x[[resp]], factor(x[[i]]), mat=TRUE, digits=3)
       ylab=i
-      xlab = "Faktör Düzeyleri"
       main="Veri Box Plot"
+      xlab="Faktor Duzeyleri"
       col=rainbow(7)
       font.main=3
       font.lab=6
@@ -39,7 +39,7 @@ tanimla <- function(x, resp, fac){
               cex.main=cex.main,
               data=x)
 
-     lattice::dotplot(x[[resp]] ~ x[[i]],
+      az <- dotplot(x[[resp]] ~ x[[i]],
               main="Veri Dot Plot",
               xlab=xlab,
               ylab=ylab,
@@ -48,24 +48,25 @@ tanimla <- function(x, resp, fac){
               cex.lab=cex.lab,
               cex.main=cex.main,
               data=x)
+      print(az)
 
-     lwd=1
+      lwd=1
      xlab=resp
-     ylab="Yüzde"
+     ylab="Yuzde"
      type.1="percent"
      type.2="density"
      type.3 = "count"
-     breaks="Sturges" # Sturges otomatik aralik belirler. Ayrica breaks1=seq(from=28,to=42,by=2) gibi ?l?ekleyebilirz.
+     breaks="Sturges"
      col="gold"
      border="grey100"
-     lattice::histogram(~x[[resp]]|x[[i]], data=x,
+     kz <- lattice::histogram(~x[[resp]]|x[[i]], data=x,
                type=type.1,
                xlab=xlab,
                ylab=ylab,
                border=border,
                col=col,
                breaks=breaks)
-
+    print(kz)
     }
     return(result);
   }
